@@ -1,0 +1,6 @@
+node_modules/
+*.zip
+.idea/
+Procfile
+package-lock.json
+package.json

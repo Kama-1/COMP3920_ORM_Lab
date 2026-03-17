@@ -1,4 +1,3 @@
-*.zip
 .idea/
-Procfile
 .env
+Procfile

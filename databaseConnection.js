@@ -1,5 +1,4 @@
 const mysql = require('mysql2/promise');
-const databaseConnectionString = require("./databaseConnectionSequelize");
 require('dotenv').config();
 
 const dbConfigLocal = {
@@ -11,7 +10,8 @@ const dbConfigLocal = {
 	namedPlaceholders: true
 };
 
-var database = mysql.createPool(databaseConnectionString);
+var database = mysql.createPool(dbConfigLocal);
+console.log(database)
 
 module.exports = database;
 		

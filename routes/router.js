@@ -104,9 +104,15 @@ router.get('/showPets', async (req, res) => {
 		else {
 			let pets = await user.getPets();
 			console.log(pets);
-			let owner = await pets[0].getOwner();
-			console.log(owner);
-			res.render('pets', {allPets: pets});
+
+			if (pets.length > 0){
+				let owner = await pets[0].getOwner();
+				console.log(owner);
+				res.render('pets', {allPets: pets});
+			} else {
+				res.render('nopets', {allPets: pets});
+			}
+
 		}
 	}
 	catch(ex) {

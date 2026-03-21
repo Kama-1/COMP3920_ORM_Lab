@@ -7,7 +7,8 @@ const dbConfigLocal = {
 	password: process.env.DB_PASSWORD,
 	database: process.env.DB_NAME,
 	multipleStatements: false,
-	namedPlaceholders: true
+	namedPlaceholders: true,
+	dialect: 'mysql'
 };
 
 var database = mysql.createPool(dbConfigLocal);
